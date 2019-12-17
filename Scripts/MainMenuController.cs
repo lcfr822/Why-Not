@@ -12,7 +12,11 @@ public class MainMenuController : MonoBehaviour
         SceneManager.LoadScene(1);
     }
 
-    public void ToggleCreditsVisibility(CanvasGroup canvasGroup)
+    /// <summary>
+    /// Toggles a specified CanvasGroup object that is shown while the main menu CanvasGroup is hidden.
+    /// </summary>
+    /// <param name="canvasGroup">Toggled CanvasGroup.</param>
+    public void ToggleMainMenuGroup(CanvasGroup canvasGroup)
     {
         if (canvasGroup.alpha == 0)
         {

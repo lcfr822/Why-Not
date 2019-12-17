@@ -11,7 +11,6 @@ public class GameMenusController : MonoBehaviour
 
     private bool gameOver = false;
 
-    // Start is called before the first frame update
     void Start()
     {
         endgameGroup.alpha = 0.0f;
@@ -21,7 +20,6 @@ public class GameMenusController : MonoBehaviour
         TogglePauseMenu(false);
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetButtonDown("Cancel") && !gameOver)
@@ -31,6 +29,10 @@ public class GameMenusController : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Enables of disables the pause state and shows or hides pause menu accordingly.
+    /// </summary>
+    /// <param name="enabled">Value determining pause status.</param>
     public void TogglePauseMenu(bool enabled)
     {
         if (enabled)
@@ -49,6 +51,9 @@ public class GameMenusController : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Terminate the gameplay session and show the final scores.
+    /// </summary>
     public void ShowEndgameMenu()
     {
         gameOver = true;
@@ -62,16 +67,25 @@ public class GameMenusController : MonoBehaviour
         endgameGroup.interactable = true;
     }
 
+    /// <summary>
+    /// Restart play.
+    /// </summary>
     public void Restart()
     {
         SceneManager.LoadScene(1);
     }
 
+    /// <summary>
+    /// Return to the main menu.
+    /// </summary>
     public void MainMenu()
     {
         SceneManager.LoadScene(0);
     }
 
+    /// <summary>
+    /// Exit the application.
+    /// </summary>
     public void Quit()
     {
         Application.Quit();

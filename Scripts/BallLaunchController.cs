@@ -13,9 +13,14 @@ public class BallLaunchController : MonoBehaviour
 
     void Update()
     {
+        // Check if the game session is running normally and that the ball launcher is not in its cooldown period.
         if (canLaunch && FindObjectOfType<MasterGameplayManager>().gameRunning) { StartCoroutine(LaunchBall()); }
     }
 
+    /// <summary>
+    /// Shows a preview of where the ball launcher will snap to then hides the preview, rotates the launcher, and launches a ball.
+    /// </summary>
+    /// <returns></returns>
     private IEnumerator LaunchBall()
     {
         canLaunch = false;

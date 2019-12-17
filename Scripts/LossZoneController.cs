@@ -11,11 +11,11 @@ public class LossZoneController : MonoBehaviour
     public CanvasGroup endgameGroup;
     public Image[] healthImages = new Image[5];
 
-    private void Start()
-    {
-        
-    }
-
+    /// <summary>
+    /// Detect trigger entry in the loss zone and decrease health if the decrease results in a number greater than zero.
+    /// Otherwise decrease health to zero and end the game.
+    /// </summary>
+    /// <param name="collision"></param>
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (!FindObjectOfType<MasterGameplayManager>().gameRunning) { return; }

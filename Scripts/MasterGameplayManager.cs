@@ -12,18 +12,11 @@ public class MasterGameplayManager : MonoBehaviour
     public float accuracyScore { get; private set; } = 0.0f;
     public float totalScore { get; private set; } = 0.0f;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+    /// <summary>
+    /// Increase the player's score values by specified amounts and update the Score UI element.
+    /// </summary>
+    /// <param name="baseAmount">Always equal to 10.</param>
+    /// <param name="accuracyAmount">Value between -5 and 5 to be added to the base score.</param>
     public void AddScore(float baseAmount, float accuracyAmount)
     {
         baseScore += baseAmount;
